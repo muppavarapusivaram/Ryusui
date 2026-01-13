@@ -20,6 +20,10 @@ break;
 }
 
 input[strcspn(input, "\n")] = '\0';
+
+if(strcmp(input, "exit") == 0)
+break;
+
 if(strlen(input) == 0)
 {
 continue;
