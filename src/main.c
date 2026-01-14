@@ -12,7 +12,6 @@ while(1)
 {
    printf("$ ");
 
-char input[100];
 if(fgets(input, sizeof(input), stdin) == NULL)
 {
 printf("\n");
@@ -28,7 +27,24 @@ if(strlen(input) == 0)
 {
 continue;
 }
-printf("%s: command not found\n", input);
+
+
+//The implementation of echo
+if(strncmp(input, "echo", 4) == 0)
+{
+		char *echo_args = input + 4;
+
+while(*echo_args == ' ')
+	echo_args++;
+
+printf("%s\n", echo_args);
+
+	}
+
+else
+{
+	printf("%s: command not found\n", input);
+}
 }
   return 0;
 }
